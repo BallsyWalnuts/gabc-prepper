@@ -13,6 +13,7 @@ Liang](https://tug.org/docs/liang/) to hyphenate words for TeX ages ago. It is n
 enough for government work.
 
 ## Usage
+### Command Line
 ```shell
 $ echo "some text to split on syllables" | python gabc_prep.py
 some() text() to() split() on() syl()la()bles()
@@ -21,4 +22,17 @@ $ echo "some text to split on syllables
 across multiple lines" | python .\gabc_prep.py
 some() text() to() split() on() syl()la()bles()
 across() mul()ti()ple() lines()
+```
+
+### In Python Script
+First, you will need to install the module:
+```shell
+pip install -e /path/to/repo
+```
+
+Then, it can be used in the following manner:
+```python
+from gabc_prep import prep_text
+
+print(prep_text(text_to_prep="some text to prepare"))
 ```
